@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            background-color: #f00;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        盒子1
+    </div>
+    <div id="box">
+        盒子2
+    </div>
+    <div id="box">
+        盒子3
+    </div>
+    <script src="./utils.js"></script>
+    <script>
+        var box = document.querySelectorAll('#box');
+        box.forEach(function(item, index) {
+            item.addEventListener('click', function() {
+                var res = parseInt(getComputedStyle(this).width);
+                res += randomInt(10, 50);
+                this.style.width = res + 'px';
+                var randomColor = randomRGBColor();
+                this.style.backgroundColor = randomColor;
+            })
+
+        });
+    </script>
+</body>
+
+</html>
