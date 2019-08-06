@@ -18,22 +18,28 @@
 
 <body>
     <div id="box">
-        盒子
+
     </div>
     <script src="./utils.js"></script>
     <script>
         //  查找元素
         var box = document.querySelector('#box');
-        target = 1000;
+        target = 1300;
         //    把启动多次定时器的编号储存到变量timerId中，可通过编号清除
         var timerId = setInterval(function() {
-            //    获取元素的宽并转为数值型赋值给width变量
+            //    获取元素的宽并转为数值型赋值给oldWidth变量
             var oldWidth = parseInt(getComputedStyle(box).width);
-            oldWidth += 50
+            // oldWidth加上随机整数
+            oldWidth += randomInt(10, 150);
+
             box.style.width = oldWidth + 'px';
+            // 调取随机颜色函数作用于元素的样式
             box.style.backgroundColor = randomRGBColor();
+            // 判断宽度的大小
             if (oldWidth >= target) {
+                // 清除多次定时器
                 clearInterval(timerId);
+                // 对宽度重新调整为目标大小
                 oldWidth = target + 'px';
             }
         }, 1000);
