@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 199px;
+            height: 200px;
+            background-color: pink;
+            transition-duration: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        盒子
+    </div>
+    <script src="./utils.js"></script>
+    <script>
+        //  查找元素
+        var box = document.querySelector('#box');
+        target = 1000;
+        //    把启动多次定时器的编号储存到变量timerId中，可通过编号清除
+        var timerId = setInterval(function() {
+            //    获取元素的宽并转为数值型赋值给width变量
+            var oldWidth = parseInt(getComputedStyle(box).width);
+            oldWidth += 50
+            box.style.width = oldWidth + 'px';
+            box.style.backgroundColor = randomRGBColor();
+            if (oldWidth >= target) {
+                clearInterval(timerId);
+                oldWidth = target + 'px';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
