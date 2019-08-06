@@ -42,3 +42,4 @@ function randomHexColor() {
     }
     return color.join('');
 }
+1
