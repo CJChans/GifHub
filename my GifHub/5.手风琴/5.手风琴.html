@@ -1,4 +1,3 @@
-r
 <!DOCTYPE html>
 <html>
 
@@ -61,6 +60,24 @@ r
             </li>
         </ul>
     </div>
+    <script>
+        window.addEventListener('load', function() {
+            var lis = document.querySelectorAll('.slider li');
+            lis.forEach(function(item, index) {
+                item.addEventListener('mouseover', function() {
+                    lis.forEach(function(item, index) {
+                        item.style.width = 50 + 'px';
+                    });
+                    item.style.width = 800 + 'px';
+                });
+                item.addEventListener('mouseout', function() {
+                    lis.forEach(function(item, index) {
+                        item.style.width = 200 + 'px';
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
