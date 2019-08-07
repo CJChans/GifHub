@@ -1,0 +1,66 @@
+r
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>手风琴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 去掉li标签自带的样式 点 */
+        
+        ul {
+            list-style: none;
+        }
+        
+        .wrap {
+            width: 1000px;
+            margin: 50px auto;
+        }
+        
+        .slider {
+            width: 1000px;
+            height: 400px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        
+        .slider li {
+            width: 200px;
+            height: 400px;
+            float: left;
+            cursor: pointer;
+            /* 过渡属性 */
+            transition: all 0.4s;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="slider" class="slider">
+            <li>
+                <img src="./images/mi1.jpg" alt="" />
+            </li>
+            <li>
+                <img src="./images/mi2.jpg" alt="" />
+            </li>
+            <li>
+                <img src="./images/mi3.jpg" alt="" />
+            </li>
+            <li>
+                <img src="./images/mi4.jpg" alt="" />
+            </li>
+            <li>
+                <img src="./images/mi5.jpg" alt="" />
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
