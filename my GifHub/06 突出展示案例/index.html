@@ -64,6 +64,20 @@
             </li>
         </ul>
     </div>
+    <script src="../jquery-2.2.2.js"></script>
+    <script>
+        // jQuery入口函数
+        $(function() {
+            // 当鼠标移入li时，当前的li透明度变为1，其他的li透明度变为0.3
+            $('.wrap ul li').on('mouseenter', function() {
+                    $(this).css('opacity', 1).siblings().css('opacity', .3)
+                })
+                // 当鼠标移出li时，所有的li透明度变为1
+            $('.wrap').on('mouseleave', function() {
+                $(this).find('li').css('opacity', 1)
+            })
+        })
+    </script>
 </body>
 
 </html>
