@@ -50,16 +50,27 @@
     </style>
     <script src="../jquery-2.2.2.js"></script>
     <script>
+        // // 入口函数
+        // $(function() {
+        //     // 当鼠标移入li标签的a标签时，让ul显示出来
+        //     $('.wrap > ul > li > a').on('mouseover', function() {
+        //             $(this).next().stop().slideDown(500)
+        //         })
+        //         // 当鼠标移出li标签的a标签时，让ul隐藏出来
+        //     $('.wrap > ul > li > a').on('mouseout', function() {
+        //         $(this).next().stop().slideUp(500)
+        //     })
+        // })
         // 入口函数
         $(function() {
             // 当鼠标移入li标签的a标签时，让ul显示出来
-            $('.wrap > ul > li > a').on('mouseover', function() {
-                    $(this).next().stop().slideDown(500)
+            $('.wrap > ul > li > a').hover(function() {
+                    $(this).next().stop().slideDown(200)
+                }, function() {
+                    $(this).next().stop().slideUp(200)
                 })
                 // 当鼠标移出li标签的a标签时，让ul隐藏出来
-            $('.wrap > ul > li > a').on('mouseout', function() {
-                $(this).next().stop().slideUp(500)
-            })
+
         })
     </script>
 </head>
