@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-2.2.2.js"></script>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="添加类">
+    <input type="button" value="删除类">
+    <input type="button" value="切换类">
+    <input type="button" value="判断类">
+    <div></div>
+    <script>
+        $(function() {
+            var box = $('div');
+            $('input:first').click(function() {
+                box.addClass('box');
+            })
+            $('input:eq(1)').click(function() {
+                box.removeClass('box');
+            })
+            $('input:eq(2)').click(function() {
+                box.toggleClass('box');
+            })
+            $('input:last').click(function() {
+                var b = box.hasClass('box');
+                console.log(b);
+            })
+        })
+    </script>
+</body>
+
+</html>
