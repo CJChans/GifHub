@@ -59,7 +59,19 @@
             border-right: 1px solid pink;
         }
     </style>
-
+    <script src="../jquery-2.2.2.js"></script>
+    <script>
+        $(function() {
+            $('#left li').on('mouseenter', function() {
+                var leftLi = $(this).index()
+                $('#center li').eq(leftLi).show().siblings().hide()
+            })
+            $('#right li').on('mouseenter', function() {
+                var rightLi = $(this).index()
+                $('#center li').eq(rightLi).show().siblings().hide()
+            })
+        })
+    </script>
 </head>
 
 <body>
