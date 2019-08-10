@@ -43,6 +43,21 @@
             background-color: #f0f0f0;
         }
     </style>
+    <script src="./jquery-2.2.2.js"></script>
+    <script>
+        $(function() {
+            $('#j_tb>tr:even').css('backgroundColor', '#999')
+            $('#j_tb>tr:odd').css('backgroundColor', '#bbb')
+            var bgcColor;
+            $('#j_tb>tr').mouseenter(function() {
+                bgcColor = $(this).css('backgroundColor')
+                $(this).css('backgroundColor', '#fff')
+            })
+            $('#j_tb>tr').mouseleave(function() {
+                $(this).css('backgroundColor', bgcColor)
+            })
+        })
+    </script>
 
 
 </head>
