@@ -1,0 +1,58 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-10 15:27:14
+ * @LastEditTime: 2019-08-10 15:29:23
+ * @LastEditors: Please set LastEditors
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选水果案例</title>
+    <style>
+        select {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+    <script src="./js/jquery-2.2.2.js"></script>
+    <script>
+        $(function() {
+            $('input').eq(0).on('click', function() {
+                $('#target').append($('#source option'))
+                    // $('#target').html($('#source option'))
+            })
+            $('input').eq(1).on('click', function() {
+                $('#source').append($('#target option'))
+            })
+            $('input').eq(2).on('click', function() {
+                $('#target').append($('#source option:selected'))
+            })
+            $('input').eq(3).on('click', function() {
+                $('#source').append($('#target option:selected'))
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <select name="" id="source" multiple>
+     <option value="">苹果</option>
+     <option value="">香蕉</option>
+     <option value="">桔子</option>
+     <option value="">菠萝</option>
+     <option value="">荔枝</option>
+     <option value="">哈密瓜</option>
+   </select>
+    <input type="button" value=">>">
+    <input type="button" value="<<">
+    <input type="button" value=">">
+    <input type="button" value="<">
+    <select name="" id="target" multiple></select>
+</body>
+
+</html>
