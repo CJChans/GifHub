@@ -55,6 +55,16 @@
             bottom: 72px;
         }
     </style>
+    <script src="../jquery-2.2.2.js"></script>
+    <script>
+        $(function() {
+            $('.wrap .item').hover(function() {
+                $(this).addClass('box').siblings().removeClass('box')
+            }, function() {
+                $('.wrap .item:first').addClass('box').siblings().removeClass('box')
+            })
+        })
+    </script>
 
     <body>
         <div class="wrap">
