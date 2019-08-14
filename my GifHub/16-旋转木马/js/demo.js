@@ -53,11 +53,11 @@ $(function() {
     }, function() {
         $('#arrow').animate({ opacity: 0 }, 300)
     })
-    $('#arrRight').on('click', function() {
+    $(right).on('click', function() {
         config.push(config.shift());
         assign();
     })
-    $('#arrLeft').on('click', function() {
+    $(left).on('click', function() {
         config.unshift(config.pop());
         assign();
     })
